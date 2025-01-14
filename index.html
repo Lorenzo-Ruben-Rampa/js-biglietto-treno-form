@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <title>Biglietto-treno-form</title>
+</head>
+<body>
+    <form action="/action_page.php" method="get">
+        <label for="name">Nome e Cognome</label><br><br>
+        <input type="text" id="name" name="name"><br><br>
+        <label for="name">Km da percorrere</label>
+        <input type="number" id="km" name="kmNumber"><br><br>
+        <label for="age">Fascia d'età</label>
+        <select id="age" name="userAge">
+            <option value="18+">Maggiorenne</option>
+            <option value="-18">Minorenne</option>
+            <option value="60+">Over60</option>
+        </select><br><br>
+        <input type="submit" value="Genera">
+        <input type="reset" value="Annulla">
+    </form>
+    <script type="text/javascript" src="js/script.js"></script>
+</body>
+</html>
