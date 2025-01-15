@@ -1,0 +1,52 @@
+body {
+    background-color: purple;
+    height: 100vh;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: white;
+    padding-left: 300px;
+    padding-right: 300px;
+    padding-top: 50px;
+    padding-bottom: 20px;
+    border-radius: 3%;
+}
+
+label {
+    padding: 8px;
+}
+
+.entryData {
+    width: 33%;
+    margin-bottom: 50px;
+}
+
+.secondo {
+    background-color: white;
+}
+
+.grey {
+    background-color: grey;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+}
+
+.purple {
+    color: purple;
+}
+
+.bold {
+    font-size:larger;
+    font-weight: 400;
+}
+
+button:focus {
+    border-color: orange;
+}
