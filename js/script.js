@@ -1,8 +1,7 @@
 // Intercettare il form
 const form = document.querySelector('form');
-form.addEventListener('submit', (event) => {
+form.addEventListener('submit', (event) => { //* INIZIO EVENTO SUBMIT *//
 event.preventDefault();
-});
 
 // Seleziono elementi input
 const nomeiniziale = document.getElementById('name');
@@ -12,20 +11,22 @@ const etaInput = document.getElementById('age');
 // Seleziono elementi output
 const returnName = document.getElementById('outputNome');
 const ticketOffer = document.getElementById('outputOffer');
-const Carrozza = document.getElementById('outputCarrozza');
-const CPCode = document.getElementById('outputCPCode');
+const carrozza = document.getElementById('outputCarrozza');
+const cpCode = document.getElementById('outputCPCode');
 const datoPrezzoFinale = document.getElementById('outputPrezzo');
 
 // Converto i valori degli input in numeri
 const distanza = parseInt(distanzaInput.value);
 const eta = parseInt(etaInput.value);
+console.log(eta);
 
 // prezzo
-const prezzoBase = distanzaInput *0.21;
+const prezzoBase = distanza *0.21;
 let sconto = 0;
+console.log(prezzoBase);
 
 // Condizioni sconto
-if (eta<18) {
+if (eta < 18) {
    sconto = prezzoBase * 0.20;
 } else if(eta > 65) {
    sconto = prezzoBase * 0.40;
@@ -37,6 +38,9 @@ console.log(prezzoFinale.toFixed(2));
 
 // Stampo il risultato finale negli output
 datoPrezzoFinale.innerHTML = `€${prezzoFinale.toFixed(2)}`;
+}); //* FINE EVENTO SUBMIT */
+
+
 
 
 // TENTATIVI PRECEDENTI FALLITI
