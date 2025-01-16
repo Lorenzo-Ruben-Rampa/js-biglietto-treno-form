@@ -1,32 +1,75 @@
-const name = document.getElementById("name").value;
-const chilometri = parseInt(document.getElementById("km").value);
-const age = parseInt(document.getElementById("age").value);
-const prezzoBase = chilometri *0.21;
-let prezzoFinale = prezzoBase;
+// Intercettare il form
+const form = document.querySelector('form');
+form.addEventListener('submit', (event) => {
+event.preventDefault();
+});
+
+// Seleziono elementi input
+const nomeiniziale = document.getElementById('name');
+const distanzaInput = document.getElementById('km');
+const etaInput = document.getElementById('age');
+
+// Seleziono elementi output
+const returnName = document.getElementById('outputNome');
+const ticketOffer = document.getElementById('outputOffer');
+const Carrozza = document.getElementById('outputCarrozza');
+const CPCode = document.getElementById('outputCPCode');
+const datoPrezzoFinale = document.getElementById('outputPrezzo');
+
+// Converto i valori degli input in numeri
+const distanza = parseInt(distanzaInput.value);
+const eta = parseInt(etaInput.value);
+
+// prezzo
+const prezzoBase = distanzaInput *0.21;
+let sconto = 0;
 
 // Condizioni sconto
-if (age<18) {
-   prezzoFinale * 0.80;
-} else if(age > 65) {
-   prezzoFinale * 0.60;
+if (eta<18) {
+   sconto = prezzoBase * 0.20;
+} else if(eta > 65) {
+   sconto = prezzoBase * 0.40;
 } 
 
-console.log(prezzoFinale);
+// Prezzo finale
+let prezzoFinale = prezzoBase - sconto;
+console.log(prezzoFinale.toFixed(2));
 
-//Formatto prezzo finale a decimali
-prezzoFinale = prezzoFinale.toFixed(2);
+// Stampo il risultato finale negli output
+datoPrezzoFinale.innerHTML = `€${prezzoFinale.toFixed(2)}`;
+
+
+// TENTATIVI PRECEDENTI FALLITI
+// function capitalizeFirstLetter(nomeiniziale) {
+//    return nomeiniziale.charAt(0).toUpperCase() + nomeiniziale.slice(1);
+// }
+// const nomeFormat = capitalizeFirstLetter(nomeiniziale);
+// console.log(nomeFormat);
+
+// function aggiungiAllaTabella() {
+//    let ritornaNome = nomeDecimale.value;
+
+//    if(ritornaNome) {
+//       const ritornaNomeTab = document.getElementById('prova');
+//       prova = ritornaNome;
+//    }
+// }
+// document.getElementById('name').addEventListener('input', aggiungiAllaTabella); 
+// field.addEventListener('input', () => {
+//    const name = field.charAt(0).toUpperCase().value;
+//    console.log(name);
+//    ritornaNome.innerText = name;
+// });
 
 //Inserisco i risultati nel secondo container
-const nomePasseggero = document.querySelector('outputName')
-nomePasseggero.innerHTML += '<p></p>';
-nomePasseggero.append('name');
+// function setValues(value){
+//    let nome = document.getElementById("name").value;
+//    document.getElementById("prova").value = nome;
+//    }
 
-const datoPrezzoFinale = document.querySelector('outputName')
-datoPrezzoFinale.innerHTML += '<p></p>'
-datoPrezzoFinale.append('prezzoFinale');
+// console.log(setValues);
 
-
-// - il prezzo del biglietto è definito in base ai km (0.21 € al km)
-// - va applicato uno sconto del 20% per i minorenni
-// - va applicato uno sconto del 40% per gli over 65.
+// const nomePasseggero = document.querySelector('td.outputName')
+// nomePasseggero.innerHTML += '<p></p>';
+// nomePasseggero.append(name);
 

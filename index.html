@@ -12,11 +12,11 @@
             <form action="/action_page.php" method="get">
                 <div class="entryData">
                     <label for="name" class="purple">Nome Cognome</label>
-                    <input type="text" id="name" name="name">
+                    <input type="text" id="name" name="name" placeholder="Inserisci il tuo nome">
                 </div>
                 <div class="entryData">
                     <label for="name" class="purple">Km da percorrere</label> 
-                    <input type="number" id="km" name="kmNumber">
+                    <input type="number" id="km" name="kmNumber" placeholder="Inserisci il numero di km">
                 </div>
                 <div class="entryData">
                     <label for="age" class="purple">Fascia d'età</label>
@@ -26,7 +26,7 @@
                     <option value="60+">Over65</option>
                 </select>
                 </div>
-            <input type="submit" class="purple bold" value="Genera">
+            <input type="submit" id="generate" class="purple bold" value="Genera">
             <input type="reset" class=" purple bold" value="Annulla">
             </form>
     </div>
@@ -36,15 +36,15 @@
         <table>
             <tr>
                 <th class="grey"><strong>NOME PASSEGGERO</strong></th>
-                <td class="outputName"></td>
+                <td id="outputNome"></td>
                 <th>Offerta</th>    
-                <td class="outputOffer"></td>
+                <td id="outputOffer"></td>
                 <th>N° Carrozza</th>
-                <td class="outputCarrozza"></td>
+                <td id="outputCarrozza"></td>
                 <th>Codice CP</th>
-                <td class="outputCPCode"></td>
+                <td id="outputCPCode"></td>
                 <th>Costo Biglietto</th>
-                <td class="outputPrezzo"></td>
+                <td id="outputPrezzo"></td>
             </tr>
  
     </div>
